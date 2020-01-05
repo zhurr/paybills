@@ -1,4 +1,5 @@
 # paybills
+vue-cli3 + elementui + echarts
 
 ## Project setup
 ```
