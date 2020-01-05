@@ -1,0 +1,29 @@
+/*
+Write your variables here. All available variables can be
+found in element-ui/packages/theme-chalk/src/common/var.scss.
+For example, to overwrite the theme color:
+*/
+$--color-primary: teal;
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+//轮播图
+.yw-carousel.el-carousel {
+  &.el-carousel--vertical {
+    .el-carousel__indicators--vertical {
+      right: 20px;
+      top: 50%;
+    }
+
+    .el-carousel__indicator--vertical {
+      .el-carousel__button {
+        width: 12px !important;
+        height: 12px !important;
+        border-radius: 100%;
+      }
+    }
+  }
+}

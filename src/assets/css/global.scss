@@ -1,0 +1,40 @@
+#app {
+  font-family: "PingFangSC-Semibold", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+}
+
+html,
+body,
+#app,
+#home {
+  width: 100%;
+  height: 100%;
+  /* overflow-x: hidden; */
+}
+
+html {
+  width: 1920px;
+  height: 1080px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
