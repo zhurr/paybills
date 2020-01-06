@@ -11,14 +11,14 @@
       <div class="main">
         <div class="left">
           <div class="title-wrap">
-            <p class="title">2019年度总消费</p>
-            <p class="num">93,8050 <span class="cell">元</span></p>
+            <p class="title">2019年工单总数</p>
+            <p class="num">443 <span class="cell">条</span></p>
             <div :id="leftDatas.id"
                  style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
           </div>
         </div>
         <div class="right">
-          <p class="title">各月份消费账单趋势</p>
+          <p class="title">各月份工单数量统计</p>
           <div :id="rightDatas.id"
                style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
         </div>
@@ -39,15 +39,15 @@ export default {
   },
   data () {
     return {
-      leftDatas: { id: 'page3-1', chartOption: 'pie-option', chartDatas: [], total: 0 },
-      rightDatas: { id: 'page3-2', chartOption: 'line-option', chartDatas: [] },
+      leftDatas: { id: 'page4-1', chartOption: 'pie-option', chartDatas: [], total: 0 },
+      rightDatas: { id: 'page4-2', chartOption: 'line-option', chartDatas: [] },
     }
   },
 
   methods: {
     //获得数据
     getDatas () {
-      this.leftDatas.total = '93,8050元';
+      this.leftDatas.total = '443条';
       this.leftDatas.chartDatas = [
         {
           name: '裸金属',
@@ -155,7 +155,7 @@ export default {
 
       option.legend.formatter = (params) => {
         let value = chartDatas.find(value => value.name == params).value;
-        let text = `${params}${'  '}${value}元`;
+        let text = `${params}${'  '}${value}条`;
         // let colors = [colorSource.pieBlue[0].color, colorSource.piePurple[0].color, colorSource.pieGreen[0].color];
         // let flag = `<span style="display:inline-block;vertical-align:middle;margin-right:3px;width:5px;height:5px;border-radius:100%;background:${colors[params.dataIndex]};"></span>`;
         // let value = `<span style="margin-left:8px;">${params.percent}%，${params.value}元</span>`
@@ -167,8 +167,8 @@ export default {
       option.tooltip.formatter = (params) => {
         let colors = [colorSource.pieBlue[0].color, colorSource.piePurple[0].color, colorSource.pieGreen[0].color];
         let flag = `<span style="display:inline-block;vertical-align:middle;margin-right:3px;width:5px;height:5px;border-radius:100%;background:${colors[params.dataIndex]};"></span>`;
-        let value = `<span style="margin-left:8px;">${params.percent}%，${params.value}元</span>`
-        let text = `${flag}${params.name}消费：<br/>${value}`;
+        let value = `<span style="margin-left:8px;">${params.percent}%，${params.value}条</span>`
+        let text = `${flag}${params.name}：<br/>${value}`;
         return text;
       }
 
@@ -221,7 +221,7 @@ export default {
 
       option.tooltip.formatter = (params) => {
         let flag = `<span style="display:inline-block;vertical-align:middle;margin-right:3px;width:4px;height:4px;border-radius:100%;background:#fff;"></span>`;
-        let text = `${flag}${params[0].name}消费：<br/><span style="margin-left:7px;">${params[0].value}元</span>`;
+        let text = `${flag}${params[0].name}：<br/><span style="margin-left:7px;">${params[0].value}条</span>`;
         return text;
       }
 
@@ -258,7 +258,7 @@ export default {
       .title-wrap {
         width: 737px;
         height: 116px;
-        background: url(../assets/img/pic_pay.png) no-repeat;
+        background: url(../assets/img/bg.png) no-repeat;
         margin: 20px 0 0 25px;
         .title {
           font-size: 18px;

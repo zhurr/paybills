@@ -62,7 +62,7 @@
 <script>
 
 export default {
-  name: 'home',
+  name: 'page2',
   components: {
 
   },
@@ -110,6 +110,26 @@ export default {
           name: '中国移动党建云平台',
           wuliji: '120',
           xuniji: '10'
+        },
+        {
+          name: '中国移动党建云平台',
+          wuliji: '34',
+          xuniji: '0'
+        },
+        {
+          name: '中国移动党建云平台',
+          wuliji: '0',
+          xuniji: '105'
+        },
+        {
+          name: '中国移动党建云平台',
+          wuliji: '120',
+          xuniji: '10'
+        },
+        {
+          name: '中国移动党建云平台',
+          wuliji: '34',
+          xuniji: '0'
         },
         {
           name: '中国移动党建云平台',

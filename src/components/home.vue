@@ -5,7 +5,7 @@
                  height="1080px"
                  direction="vertical"
                  :autoplay="false">
-      <el-carousel-item v-for="item in 3"
+      <el-carousel-item v-for="item in 6"
                         :key="item">
         <component :is="activePage+item"></component>
       </el-carousel-item>
@@ -18,9 +18,13 @@
 export default {
   name: 'home',
   components: {
-    page1: () => import('./page1'),
-    page2: () => import('./page2'),
-    page3: () => import('./page3'),
+    page1: () => import('./page1.vue'),
+    page2: () => import('./page2.vue'),
+    page3: () => import('./page3.vue'),
+    page4: () => import('./page4.vue'),
+    page5: () => import('./page5.vue'),
+    page6: () => import('./page6.vue'),
+
   },
   data () {
     return {
@@ -43,8 +47,6 @@ export default {
   width: 100%;
   height: 100%;
   background: url(../assets/img/img_bg.png) no-repeat;
-
-  // background-size: cover;
   .log-wrap {
     display: inline-block;
     margin: 20px 0 0 20px;
