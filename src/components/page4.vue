@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       leftDatas: { id: 'page4-1', chartOption: 'pie-option', chartDatas: [], total: 0 },
-      rightDatas: { id: 'page4-2', chartOption: 'line-option', chartDatas: [] },
+      rightDatas: { id: 'page4-2', chartOption: 'bar-option', chartDatas: [] },
     }
   },
 
@@ -129,8 +129,8 @@ export default {
           case 'pie-option':
             this.drawPie(myChart, subItem);
             break;
-          case 'line-option':
-            this.drawLine(myChart, subItem);
+          case 'bar-option':
+            this.drawBar(myChart, subItem);
             break;
         }
 
@@ -204,39 +204,42 @@ export default {
       // resize自适应
       this.setResizeFun(myChart)
     },
-    drawLine (myChart, subItem) {
-      //数据格式处理
-      let option = JSON.parse(JSON.stringify(ChartOption[subItem.chartOption]));
-      let chartDatas = JSON.parse(JSON.stringify(subItem.chartDatas));
-      let colors = ChartOption['color-option']['linearColor'];
+    drawBar (myChart, subItem) {
 
-      option.yAxis.name = '（元）';
-      // option.title.show = true;
-      // option.title.text = ``;
-      // option.title.subtext = '（元）';
+      let option = JSON.parse(JSON.stringify(ChartOption[subItem.chartOption]))
+      let chartDatas = JSON.parse(JSON.stringify(subItem.chartDatas))
+      let colors = ChartOption['color-option']['linearColor']
 
-      option.series[0] = JSON.parse(JSON.stringify(option.series[0]));
+      option.series[0] = JSON.parse(JSON.stringify(option.series[0]))
       option.legend.data = [''];
-      option.series[0].lineStyle.color.colorStops = colors.blue;
+      option.series[0].itemStyle.color.colorStops = colors.barBlue;
+
+      option.title.show = true
+      option.title.text = '';
+      option.title.subtext = `（条）`
+      option.series[0].label.formatter = (params) => {
+        return params.value;
+      }
 
       option.tooltip.formatter = (params) => {
         let flag = `<span style="display:inline-block;vertical-align:middle;margin-right:3px;width:4px;height:4px;border-radius:100%;background:#fff;"></span>`;
-        let text = `${flag}${params[0].name}：<br/><span style="margin-left:7px;">${params[0].value}条</span>`;
+        let text = `${flag}${params[0].name}工单数量：<br/><span style="margin-left:7px;">${params[0].value}条</span>`;
         return text;
       }
 
       option.series[0].data = chartDatas.map((item) => {
-        return item.value;
-      });
+        return item.value
+      })
+
       option.xAxis.data = chartDatas.map((item) => {
-        return item.name;
-      });
+        return item.name
+      })
 
-      myChart.setOption(option, true);
+      myChart.setOption(option)
 
-      //resize自适应
-      this.setResizeFun(myChart);
-    }
+      // resize自适应
+      this.setResizeFun(myChart)
+    },
   },
   mounted () {
     this.getDatas();

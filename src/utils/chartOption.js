@@ -40,6 +40,15 @@
             color: '#08CE86' // 100% 处的颜色
           }
         ],
+        barBlue: [{
+            offset: 0,
+            color: '#1657F0' // 0% 处的颜色
+          },
+          {
+            offset: 1,
+            color: '#3CBAE3' // 100% 处的颜色
+          }
+        ],
 
 
 
@@ -508,7 +517,7 @@
         splitLine: {
           lineStyle: {
             // type: 'dashed',
-            color: '#2A3E7A'
+            color: 'rgba(255,255,255,0.16)'
           }
         }
       },
@@ -572,10 +581,8 @@
 
     // 柱状图(左-右,下-上)
     'bar-option': {
-      // 颜色系列[蓝、绿、红、紫]
-      // color: ['#186FFF', '#31D550', '#FF4800', '#832EFA'],
       textStyle: {
-        color: '#9597AB',
+        color: '#817DB0',
         fontSize: 14
       },
       title: {
@@ -584,12 +591,12 @@
         padding: [0, 0, 0, 0],
         textStyle: {
           fontSize: 14,
-          color: '#CAF4FF'
+          color: '#817DB0'
         },
         subtext: '',
         subtextStyle: {
           fontSize: 14,
-          color: '#fff'
+          color: '#817DB0'
         }
       },
       tooltip: {
@@ -597,8 +604,14 @@
         axisPointer: { // 坐标轴指示器，坐标轴触发有效
           type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
         },
-        // formatter: '',
-        confine: true
+        confine: true,
+        backgroundColor: '#0D7EF4',
+        textStyle: {
+          fontSize: 14,
+        },
+        formatter: function (param) {
+          return param
+        },
       },
       legend: {
         // show: false,
@@ -620,34 +633,6 @@
         bottom: 40,
         containLabel: true
       },
-      dataZoom: [{
-        'show': true,
-        'height': 10,
-        'xAxisIndex': [
-          0
-        ],
-        bottom: 20,
-        'start': 10,
-        'end': 90,
-        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-        handleSize: '100%',
-        handleStyle: {
-          color: '#0079F5'
-        },
-        textStyle: {
-          color: '#fff'
-        },
-        backgroundColor: '#042257',
-        borderColor: '#042257',
-        fillerColor: '#005ABB'
-      }, {
-        'type': 'inside',
-        'show': true,
-        'height': 15,
-        'start': 1,
-        'end': 35
-
-      }],
       xAxis: {
         data: ['暂无数据'],
         axisTick: {
@@ -663,9 +648,8 @@
         }
       },
       yAxis: [{
+          // inverse: true, //反向坐标轴
           name: '',
-          // name: '名称',
-          // nameLocation: 'end',
           nameTextStyle: {
             fontSize: 14,
             color: '#fff',
@@ -673,15 +657,18 @@
             padding: [0, 0, 0, 0]
           },
           axisLine: {
-            show: false
+            // show: false
+            lineStyle: {
+              color: '#2A3E7A'
+            }
           },
           axisTick: {
             show: false
           },
           splitLine: {
             lineStyle: {
-              type: 'dashed',
-              color: '#2d315f'
+              type: 'dotted',
+              color: '#2A3E7A'
             }
           }
         }
@@ -691,10 +678,13 @@
         name: '名称',
         type: 'bar',
         label: {
-          show: false,
+          show: true,
           position: 'top',
-          fontSize: 10
-          // formatter: ''
+          fontSize: 12,
+          color: '#fff',
+          formatter: function (params) {
+            return params
+          }
         },
         itemStyle: {
           color: {
@@ -713,10 +703,10 @@
               }
             ],
             global: false // 缺省为 false
-          }
-          // barBorderRadius: [4, 4, 0, 0] // 边角弧度
+          },
+          barBorderRadius: [6, 6, 6, 6] // 边角弧度
         },
-        barWidth: 20,
+        barWidth: 15,
         data: [0]
       }]
     },
