@@ -11,7 +11,7 @@
       <img src="../assets/img/pic_wenzi.png"
            alt="">
     </section>
-    <section class="footer-wrap">Copyright�-2019 中国移动IT云 版权所有</section>
+    <!--  <section class="footer-wrap">Copyright©-2019 中国移动IT云 版权所有</section> -->
   </div>
 </template>
 

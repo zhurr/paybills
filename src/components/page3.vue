@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="right">
-          <p class="title">各月份消费账单趋势</p>
+          <p class="chart-title">各月份消费账单趋势</p>
           <div :id="rightDatas.id"
                style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
         </div>
@@ -59,7 +59,7 @@ export default {
         },
         {
           name: '存储',
-          value: 939517.28,
+          value: 2677297.76,
         },
       ];
       this.drawCharts(this.leftDatas);
@@ -71,47 +71,47 @@ export default {
         },
         {
           name: '2019.02',
-          value: 743937.13
+          value: 869403.06
         },
         {
           name: '2019.03',
-          value: 843937.13
+          value: 869458.83
         },
         {
           name: '2019.04',
-          value: 643937.13
+          value: 869458.83
         },
         {
           name: '2019.05',
-          value: 743937.13
+          value: 948699.76
         },
         {
           name: '2019.06',
-          value: 643937.13
+          value: 979300.00
         },
         {
           name: '2019.07',
-          value: 743937.13
+          value: 991957.31
         },
         {
           name: '2019.08',
-          value: 843937.13
+          value: 1034615.82
         },
         {
           name: '2019.09',
-          value: 643937.13
+          value: 1081291.89
         },
         {
           name: '2019.10',
-          value: 743937.13
+          value: 1128013.74
         },
         {
           name: '2019.11',
-          value: 643937.13
+          value: 1132427.12
         },
         {
           name: '2019.12',
-          value: 743937.13
+          value: 1133823.23
         },
       ];
       this.drawCharts(this.rightDatas);
@@ -284,12 +284,6 @@ export default {
       width: 54.5%;
       height: 742px;
       background: rgba(24, 19, 109, 0.95);
-      .title {
-        font-size: 18px;
-        color: #ffffff;
-        letter-spacing: 0;
-        padding: 30px 0 0 50px;
-      }
     }
   }
 }

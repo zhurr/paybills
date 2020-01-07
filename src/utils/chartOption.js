@@ -13,6 +13,15 @@
             color: '#0D7EF4' // 100% 处的颜色
           }
         ],
+        lineGreen: [{
+            offset: 0,
+            color: '#20B6A8' // 0% 处的颜色
+          },
+          {
+            offset: 1,
+            color: '#20B6A8' // 100% 处的颜色
+          }
+        ],
         pieBlue: [{
             offset: 0,
             color: '#0099FF' // 0% 处的颜色
@@ -67,10 +76,30 @@
             color: '#3CBAE3' // 100% 处的颜色
           }
         ],
-
-
-
-
+        gaugePurple: [
+          [0.5, new echarts.graphic.LinearGradient(0, 0, 1, 0, [{ // 右/下/左/上
+              offset: 0,
+              color: '#0FD3EF'
+            },
+            {
+              offset: 1,
+              color: '#6323DB'
+            }
+          ])],
+          [1, '#17154F']
+        ],
+        gaugeRed: [
+          [0.5, new echarts.graphic.LinearGradient(0, 0, 1, 0, [{ // 右/下/左/上
+              offset: 0,
+              color: '#10A2EB'
+            },
+            {
+              offset: 1,
+              color: '#B723DB'
+            }
+          ])],
+          [1, '#17154F']
+        ],
       },
     },
     // 漏斗
@@ -238,21 +267,22 @@
       series: [{
         name: '名称',
         type: 'gauge',
-        radius: '80%',
+        radius: '100%',
         axisLine: { // 坐标轴线
           lineStyle: {
-            width: 10,
+            width: 18,
             color: [
+              //0.5是占比
               [0.5, new echarts.graphic.LinearGradient(0, 0, 1, 0, [{ // 右/下/左/上
                   offset: 0,
-                  color: '#0249CB'
+                  color: '#0FD3EF'
                 },
                 {
                   offset: 1,
-                  color: '#006CFF'
+                  color: '#6323DB'
                 }
               ])],
-              [1, '#6F7B93']
+              [1, '#17154F']
             ]
           }
         },
@@ -261,19 +291,21 @@
         },
         startAngle: 215,
         endAngle: -35,
-        // splitNumber: 5,
         splitLine: { // 分割线
+          show: false,
           length: 12,
           lineStyle: {
             width: 1
           }
         },
         axisTick: { // 刻度
+          show: false,
           lineStyle: {
             color: '#fff'
           }
         },
         pointer: { // 指针
+          show: false,
           width: 4
         },
         itemStyle: { // 指针样式
@@ -289,30 +321,21 @@
           fontSize: 12,
           formatter: '{value}%',
           height: 140,
-          offsetCenter: [0, 90],
+          offsetCenter: [0, 0],
           rich: {
             detailName: {
-              fontSize: 12
+              fontSize: 14,
+              color: '#C8C6DC'
             },
-            maxRateName: {
-              fontSize: 12,
-              color: '#fff'
-            },
-            maxRate: {
-              fontSize: 20,
-              color: '#52C4FF'
-            },
-            avgRate: {
-              fontSize: 12,
-              color: '#52C4FF'
-            },
-            avgRateName: {
-              fontSize: 12,
-              color: '#fff'
+            rate: {
+              fontSize: 28,
+              color: '#fff',
+              lineHeight: 80
             },
             rateCell: {
-              fontSize: 10,
-              color: '#52C4FF'
+              fontSize: 20,
+              color: '#fff',
+              lineHeight: 80
             }
           }
         },
@@ -374,8 +397,8 @@
           return param
         },
         textStyle: {
-          color: '#fff',
-          fontSize: '14px',
+          color: '#EAEAF2',
+          fontSize: 14,
           rich: {
             name: {
               fontSize: 14,
@@ -447,7 +470,7 @@
 
     // 线图
     'line-option': {
-      color: ['#fff'],
+      color: ['#0D7EF4', '#20B6A8'],
       textStyle: {
         color: '#817DB0',
         fontSize: 14
@@ -483,21 +506,22 @@
         },
       },
       legend: {
-        // show: false,
-        top: 0,
-        right: 10,
-        icon: 'circle',
-        itemWidth: 8,
-        itemHeight: 8,
+        // show: true,
+        // top: 0,
+        // right: 10,
+        // icon: 'circle',
+        itemWidth: 14,
+        itemHeight: 5,
         textStyle: {
           color: '#fff',
           fontSize: '14px'
         },
-        data: ['名称']
+        left: 'auto',
+        // data: ['名称']
       },
       grid: {
         // left: 20,
-        right: 40,
+        // right: 30,
         // top: 40,
         // bottom: 10,
         // containLabel: true

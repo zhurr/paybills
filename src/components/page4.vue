@@ -12,13 +12,13 @@
         <div class="left">
           <div class="title-wrap">
             <p class="title">2019年工单总数</p>
-            <p class="num">443 <span class="cell">条</span></p>
+            <p class="num">{{leftDatas.total}} <span class="cell">条</span></p>
             <div :id="leftDatas.id"
                  style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
           </div>
         </div>
         <div class="right">
-          <p class="title">各月份工单数量统计</p>
+          <p class="chart-title">各月份工单数量统计</p>
           <div :id="rightDatas.id"
                style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
         </div>
@@ -32,7 +32,7 @@ import ChartOption from '../utils/chartOption.js'
 import DrawChart from '../utils/drawCharts.js'
 
 export default {
-  name: 'page3',
+  name: 'page4',
   mixins: [DrawChart],
   components: {
 
@@ -47,71 +47,55 @@ export default {
   methods: {
     //获得数据
     getDatas () {
-      this.leftDatas.total = '443条';
+      this.leftDatas.total = '331';
       this.leftDatas.chartDatas = [
         {
-          name: '裸金属',
-          value: 8065571.67,
+          name: '网络策略单',
+          value: 279,
         },
         {
-          name: '云主机',
-          value: 939517.28,
+          name: '资源申请单',
+          value: 14,
         },
         {
-          name: '存储',
-          value: 939517.28,
+          name: '服务请求处理单',
+          value: 12,
+        },
+        {
+          name: '变更工单',
+          value: 0,
+        },
+        {
+          name: '账号申请单',
+          value: 6,
         },
       ];
       this.drawCharts(this.leftDatas);
 
       this.rightDatas.chartDatas = [
         {
-          name: '2019.01',
-          value: 643937.13
-        },
-        {
-          name: '2019.02',
-          value: 743937.13
-        },
-        {
-          name: '2019.03',
-          value: 843937.13
-        },
-        {
-          name: '2019.04',
-          value: 643937.13
-        },
-        {
-          name: '2019.05',
-          value: 743937.13
-        },
-        {
-          name: '2019.06',
-          value: 643937.13
-        },
-        {
           name: '2019.07',
-          value: 743937.13
+          value: 111
         },
         {
           name: '2019.08',
-          value: 843937.13
+          value: 77
         },
         {
           name: '2019.09',
-          value: 643937.13
+          value: 19
         },
         {
           name: '2019.10',
-          value: 743937.13
+          value: 15
         },
         {
           name: '2019.11',
-          value: 643937.13
+          value: 47
         },
         {
           name: '2019.12',
-          value: 743937.13
+          value: 42
         },
       ];
       this.drawCharts(this.rightDatas);
@@ -146,12 +130,14 @@ export default {
 
       option.title.show = true
       option.title.text = ''
-      option.title.subtext = `${this.leftDatas.total}`
+      option.title.subtext = `${this.leftDatas.total}条`
       option.title.x = '60%'
       option.title.y = '45%'
       option.series[0] = JSON.parse(JSON.stringify(option.series[0]));
       option.series[0].startAngle = 0;
-      option.legend.data = ['裸金属', '云主机', '存储'];
+      option.legend.data = chartDatas.map((item, index) => {
+        return item.name;
+      });
 
       option.legend.formatter = (params) => {
         let value = chartDatas.find(value => value.name == params).value;
@@ -287,12 +273,6 @@ export default {
       width: 54.5%;
       height: 742px;
       background: rgba(24, 19, 109, 0.95);
-      .title {
-        font-size: 18px;
-        color: #ffffff;
-        letter-spacing: 0;
-        padding: 30px 0 0 50px;
-      }
     }
   }
 }

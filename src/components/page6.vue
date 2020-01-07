@@ -7,11 +7,15 @@
     </section>
     <section class="flag-wrap">信息技术中心-管理信息系统部</section>
     <section class="main-wrap">
-      <p class="title">Hi, 管理信息系统部</p>
-      <img src="../assets/img/pic_wenzi.png"
-           alt="">
+      <p>这一年</p>
+      <p>您的总消费金额超过<span style="font-size:20px;color:#F54BA6;">28<span style="font-size:16px;">%</span></span>的租户</p>
+      <p>消费最多的资源类型是裸金属</p>
+      <p>消费最高的月份是十二月份</p>
+      <p>平均资源利用率战胜了<span style="font-size:24px;color:#F54BA6;">78<span style="font-size:16px;">%</span></span>的租户</p>
+      <p style="margin-top:20px;">2019年，您的关键词：<span class="keyword">佛系赢家</span><span class="keyword">披荆斩棘</span><span class="keyword">豪门金主</span></p>
     </section>
-    <section class="footer-wrap">Copyright�-2019 中国移动IT云 版权所有</section>
+    <section class="picture-wrap"></section>
+    <section class="footer-wrap">Copyright©-2019 中国移动IT云 版权所有</section>
   </div>
 </template>
 
@@ -39,14 +43,31 @@ export default {
 <style lang="scss" scoped>
 .main-wrap {
   width: 673px;
-  height: 300px;
-  margin: 288px auto 0 auto;
+  height: 400px;
+  margin: 235px auto 0 26%;
   padding-left: 10px;
-  .title {
-    font-size: 20px;
-    color: #42cff3;
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 60px;
+  .keyword {
+    font-size: 28px;
+    color: #4efff6;
     letter-spacing: 0;
-    margin-bottom: 30px;
+    background: -webkit-linear-gradient(left, #4efff6 0%, #25aaf9 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 15px;
   }
+}
+.picture-wrap {
+  position: absolute;
+  top: 24%;
+  right: 18%;
+  display: inline-block;
+  width: 605px;
+  height: 412px;
+  background: url(../assets/img/pic_01.png) no-repeat;
 }
 </style>

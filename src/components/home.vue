@@ -22,7 +22,7 @@ export default {
     page2: () => import('./page2.vue'),
     page3: () => import('./page3.vue'),
     page4: () => import('./page4.vue'),
-    page5: () => import('./page1.vue'),
+    page5: () => import('./page5.vue'),
     page6: () => import('./page6.vue'),
 
   },
@@ -95,6 +95,16 @@ export default {
     font-size: 12px;
     color: #ffffff;
     letter-spacing: 0;
+  }
+  .chart-title {
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0;
+    padding: 30px 0 0 30px;
+  }
+  .chart-wrap {
+    width: 100%;
+    margin: 50px 0 20px 50px;
   }
 }
 </style>

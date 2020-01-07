@@ -18,7 +18,7 @@
               <p class="name">（台）</p>
             </div>
             <div class="gaugle-item">
-              <p class="num">448</p>
+              <p class="num">888</p>
               <p class="name">虚拟机已分配总量</p>
               <p class="name">（台）</p>
             </div>
@@ -30,7 +30,8 @@
                    v-for="(item,index) in tableTitles"
                    :key="index">{{item}}</a>
               </div>
-              <el-scrollbar style="height: 100%;">
+              <el-scrollbar class="yw-scrollbar"
+                            style="height: 326px;">
                 <div class="yw-table-item"
                      v-for="(item,index) in tableDatas"
                      :key="index">
@@ -71,70 +72,161 @@ export default {
       rightDatas: [
         {
           title: '存储资源 ：FC-SAN',
-          num: '608.16',
+          num: 608.19,
           cell: '已分配总量(T)'
         },
         {
           title: '存储资源 ：IP-SAN',
-          num: '0',
+          num: 0,
           cell: '已分配总量(T)'
         },
         {
           title: '存储资源 ：块存储',
-          num: '608.16',
+          num: 608.19,
           cell: '已分配总量(T)'
         }, {
           title: '存储资源 ：文件存储',
-          num: '608.16',
+          num: 1252.6,
           cell: '已分配总量(T)'
         },
         {
           title: '存储资源 ：对象存储N',
-          num: '608.16',
+          num: 3,
           cell: '已分配总量(T)'
         },
         {
           title: '存储资源 ：备份存储',
-          num: '608.16',
+          num: 808.7,
           cell: '已分配总量(T)'
         }
       ],
-      tableTitles: ['租户应用系统名称', '物理机分配总量(台)', '虚拟机分配总量(台)'],
+      tableTitles: ['业务系统名称', '物理机分配总量(台)', '虚拟机分配总量(台)'],
       tableDatas: [
         {
-          name: '中国移动党建云平台',
-          wuliji: '0',
-          xuniji: '105'
+          name: '集中化公文系统',
+          wuliji: 0,
+          xuniji: 137
+        },
+        {
+          name: '集中化人力资源管理系统',
+          wuliji: 0,
+          xuniji: 6
+        },
+        {
+          name: '集中化公文系统',
+          wuliji: 10,
+          xuniji: 0
+        },
+        {
+          name: '集中化人力资源管理系统',
+          wuliji: 0,
+          xuniji: 142
+        },
+        {
+          name: '电子签章平台系统',
+          wuliji: 0,
+          xuniji: 2
+        },
+        {
+          name: '集中化人力资源管理系统',
+          wuliji: 124,
+          xuniji: 0
+        },
+        {
+          name: '云化统一信息平台项目',
+          wuliji: 0,
+          xuniji: 282
+        },
+        {
+          name: '全国统一待办-二期',
+          wuliji: 0,
+          xuniji: 86
+        },
+        {
+          name: '办公空间',
+          wuliji: 14,
+          xuniji: 0
+        },
+        {
+          name: '统一待办系统',
+          wuliji: 39,
+          xuniji: 0
+        },
+        {
+          name: '统一邮件',
+          wuliji: 113,
+          xuniji: 35
+        },
+        {
+          name: '统一员工门户',
+          wuliji: 45,
+          xuniji: 0
+        },
+        {
+          name: 'MOA',
+          wuliji: 37,
+          xuniji: 0
+        },
+        {
+          name: '支撑网测试平台',
+          wuliji: 56,
+          xuniji: 0
+        },
+        {
+          name: 'OAAI',
+          wuliji: 8,
+          xuniji: 0
+        },
+        {
+          name: '移动集团数字党建系统',
+          wuliji: 2,
+          xuniji: 0
+        },
+        {
+          name: '中国移动ERP人力资源集中培训管理系统',
+          wuliji: 0,
+          xuniji: 15
+        },
+        {
+          name: '中国移动考核平台系统',
+          wuliji: 0,
+          xuniji: 17
+        },
+
+        {
+          name: '管理信息系统部OA类系统与全网监控中心FTP服务器',
+          wuliji: 0,
+          xuniji: 2
+        },
+        {
+          name: '管理信息系统部SMAP认证平台测试验收环境',
+          wuliji: 0,
+          xuniji: 13
+        },
+        {
+          name: '管理信息系统部MOA测试验收环境',
+          wuliji: 0,
+          xuniji: 17
+        },
+        {
+          name: '人力资源集中培训管理系统-北京',
+          wuliji: 0,
+          xuniji: 8
+        },
+        {
+          name: '股权投资管理系统',
+          wuliji: 0,
+          xuniji: 17
+        },
+        {
+          name: '云化统一信息平台',
+          wuliji: 0,
+          xuniji: 4
         },
         {
           name: '中国移动党建云平台',
-          wuliji: '120',
-          xuniji: '10'
-        },
-        {
-          name: '中国移动党建云平台',
-          wuliji: '34',
-          xuniji: '0'
-        },
-        {
-          name: '中国移动党建云平台',
-          wuliji: '0',
-          xuniji: '105'
-        },
-        {
-          name: '中国移动党建云平台',
-          wuliji: '120',
-          xuniji: '10'
-        },
-        {
-          name: '中国移动党建云平台',
-          wuliji: '34',
-          xuniji: '0'
-        },
-        {
-          name: '中国移动党建云平台',
-          wuliji: '34',
-          xuniji: '0'
+          wuliji: 0,
+          xuniji: 105
         }
       ],
     }
