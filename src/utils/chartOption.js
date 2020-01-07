@@ -40,6 +40,24 @@
             color: '#08CE86' // 100% 处的颜色
           }
         ],
+        pieYellow: [{
+            offset: 0,
+            color: '#FFC940' // 0% 处的颜色
+          },
+          {
+            offset: 1,
+            color: '#FFC940' // 100% 处的颜色
+          }
+        ],
+        pieBlueDark: [{
+            offset: 0,
+            color: '#2A28FF' // 0% 处的颜色
+          },
+          {
+            offset: 1,
+            color: '#2A28FF' // 100% 处的颜色
+          }
+        ],
         barBlue: [{
             offset: 0,
             color: '#1657F0' // 0% 处的颜色
@@ -628,13 +646,13 @@
       },
       grid: {
         left: 10,
-        right: 10,
+        right: 40,
         top: 40,
         bottom: 40,
         containLabel: true
       },
       xAxis: {
-        data: ['暂无数据'],
+        // data: ['暂无数据'],
         axisTick: {
           show: false
         },
@@ -645,9 +663,17 @@
         },
         axisLabel: {
           // rotate: 20
+        },
+        splitLine: {
+          show: false,
+          lineStyle: {
+            type: 'dotted',
+            color: '#2A3E7A'
+          }
         }
       },
       yAxis: [{
+          data: ['暂无数据'],
           // inverse: true, //反向坐标轴
           name: '',
           nameTextStyle: {
@@ -666,6 +692,7 @@
             show: false
           },
           splitLine: {
+            show: true,
             lineStyle: {
               type: 'dotted',
               color: '#2A3E7A'
@@ -679,7 +706,7 @@
         type: 'bar',
         label: {
           show: true,
-          position: 'top',
+          position: 'right',
           fontSize: 12,
           color: '#fff',
           formatter: function (params) {
@@ -690,8 +717,8 @@
           color: {
             type: 'linear',
             x: 0,
-            y: 1, // 由下至上
-            x2: 0,
+            y: 0, // 由左至右
+            x2: 1,
             y2: 0,
             colorStops: [{
                 offset: 0,

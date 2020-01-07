@@ -231,7 +231,7 @@ export default {
         return item.value
       })
 
-      option.xAxis.data = chartDatas.map((item) => {
+      option.yAxis[0].data = chartDatas.map((item) => {
         return item.name
       })
 
