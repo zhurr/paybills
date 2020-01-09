@@ -1,5 +1,7 @@
+/**样式重置**/
 #app {
   font-family: "PingFangSC-Semibold", Helvetica, Arial, sans-serif;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
@@ -7,26 +9,22 @@
 
 html,
 body,
-#app,
-#home {
+#app {
   width: 100%;
   height: 100%;
-  /* overflow-x: hidden; */
-}
-
-html {
-  width: 1920px;
-  height: 1080px;
+  overflow: hidden;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-style: normal;
 }
 
 body {
   font-size: 12px;
+  background: #371094;
 }
 
 .clearfix:before,
@@ -37,4 +35,36 @@ body {
 
 .clearfix:after {
   clear: both;
+}
+
+/**项目常用样式**/
+//图表布局
+.main-wrap {
+  &.main-chart {
+    padding: 35px 70px 20px 50px;
+    height: 82%;
+
+    .main {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      .left {
+        width: 50.5%;
+        height: 100%;
+        background: rgba(24, 19, 109, 0.95);
+      }
+
+      .right {
+        width: 48%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-content: space-between;
+      }
+    }
+  }
 }

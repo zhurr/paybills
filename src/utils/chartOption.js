@@ -270,7 +270,7 @@
         radius: '100%',
         axisLine: { // 坐标轴线
           lineStyle: {
-            width: 18,
+            width: 16,
             color: [
               //0.5是占比
               [0.5, new echarts.graphic.LinearGradient(0, 0, 1, 0, [{ // 右/下/左/上
@@ -289,8 +289,8 @@
         axisLabel: { // 刻度标签
           show: false
         },
-        startAngle: 215,
-        endAngle: -35,
+        startAngle: 210,
+        endAngle: -30,
         splitLine: { // 分割线
           show: false,
           length: 12,
@@ -330,12 +330,12 @@
             rate: {
               fontSize: 28,
               color: '#fff',
-              lineHeight: 80
+              lineHeight: 75
             },
             rateCell: {
               fontSize: 20,
               color: '#fff',
-              lineHeight: 80
+              lineHeight: 75
             }
           }
         },
@@ -520,7 +520,7 @@
         // data: ['名称']
       },
       grid: {
-        // left: 20,
+        // left: 80,
         // right: 30,
         // top: 40,
         // bottom: 10,
@@ -546,6 +546,8 @@
       yAxis: {
         type: 'value',
         name: '',
+        // min: 'dataMin',
+        // max: 'dataMax',
         nameTextStyle: {},
         axisLine: {
           // show: false

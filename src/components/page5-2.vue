@@ -18,7 +18,7 @@
                v-for="(item,index) in rightDatas"
                :key="index">
         <div :id="item.id"
-             style="width:100%;height:100%;">暂无</div>
+             style="width: 100%;height: 100%;margin:0 auto;">暂无</div>
       </section>
     </div>
     <div class="tip-wrap">
@@ -169,16 +169,19 @@ export default {
   position: relative;
   width: 100%;
   height: 50%;
-
+  .chart-wrap {
+    width: 100%;
+    height: calc(100% - 80px);
+  }
   .chart-item {
     position: relative;
     display: inline-block;
     width: 45%;
-    height: 200px;
+    height: 100%;
   }
   .tip-wrap {
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     left: 0;
     width: 100%;
     text-align: center;

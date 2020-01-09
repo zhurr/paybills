@@ -7,7 +7,7 @@
       <span class="date">截至2019年12月底</span>
     </section>
     <section class="flag-wrap">信息技术中心-管理信息系统部</section>
-    <section class="main-wrap">
+    <section class="main-wrap main-chart">
       <div class="main">
         <div class="left">
           <p class="title">计算资源</p>
@@ -31,7 +31,7 @@
                    :key="index">{{item}}</a>
               </div>
               <el-scrollbar class="yw-scrollbar"
-                            style="height: 326px;">
+                            style="height: 100%">
                 <div class="yw-table-item"
                      v-for="(item,index) in tableDatas"
                      :key="index">
@@ -41,6 +41,11 @@
                      :title="item.wuliji">{{item.wuliji}}</a>
                   <a class="yw-table-inner"
                      :title="item.xuniji">{{item.xuniji}}</a>
+                </div>
+                <div class="empty-wrap"
+                     v-if="!tableDatas || tableDatas.length < 2">
+                  <img src="../assets/img/img_empty.png"
+                       alt="">
                 </div>
               </el-scrollbar>
             </div>
@@ -109,8 +114,8 @@ export default {
         },
         {
           name: '集中化人力资源管理系统',
-          wuliji: 0,
-          xuniji: 6
+          wuliji: 124,
+          xuniji: 148
         },
         {
           name: '集中化公文系统',
@@ -118,19 +123,9 @@ export default {
           xuniji: 0
         },
         {
-          name: '集中化人力资源管理系统',
-          wuliji: 0,
-          xuniji: 142
-        },
-        {
           name: '电子签章平台系统',
           wuliji: 0,
           xuniji: 2
-        },
-        {
-          name: '集中化人力资源管理系统',
-          wuliji: 124,
-          xuniji: 0
         },
         {
           name: '云化统一信息平台项目',
@@ -242,123 +237,118 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-wrap {
-  padding: 50px 70px 20px 50px;
-  .main {
+.left {
+  .empty-wrap {
+    text-align: center;
+  }
+  .title {
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0;
+    padding: 20px;
+  }
+  .gaugle-wrap {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    .left {
-      width: 50.5%;
-      height: 764px;
-      background: rgba(24, 19, 109, 0.95);
-      .title {
+    justify-content: space-around;
+    padding: 0 70px;
+    .gaugle-item {
+      position: relative;
+      width: 224px;
+      height: 172px;
+      background: url(../assets/img/img_wuliji.png) no-repeat;
+      &:nth-of-type(2) {
+        background: url(../assets/img/img_xuniji.png) no-repeat;
+      }
+      .num {
+        font-size: 38px;
+        color: #f04aa6;
+        letter-spacing: 0;
+        text-align: center;
+        margin: 60px 0 20px;
+      }
+      .name {
         font-size: 18px;
         color: #ffffff;
         letter-spacing: 0;
-        padding: 20px;
-        margin-bottom: 20px;
+        text-align: center;
       }
-      .gaugle-wrap {
-        display: flex;
-        justify-content: space-around;
-        padding: 0 70px;
-        .gaugle-item {
-          position: relative;
-          width: 224px;
-          height: 172px;
-          background: url(../assets/img/img_wuliji.png) no-repeat;
-          &:nth-of-type(2) {
-            background: url(../assets/img/img_xuniji.png) no-repeat;
+    }
+  }
+  .yw-table-wrap {
+    height: calc(100% - 300px);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    width: calc(100% - 40px);
+    margin: 30px auto 0;
+    .yw-table {
+      height: 100%;
+      .yw-table-item {
+        height: 33px;
+        line-height: 33px;
+        font-size: 14px;
+        color: #ffffff;
+        letter-spacing: 0;
+        padding: 0 30px;
+        &:nth-of-type(even) {
+          background: rgba(255, 255, 255, 0.05);
+        }
+        .yw-table-inner {
+          display: inline-block;
+          &:nth-child(1) {
+            width: 50%;
           }
-          .num {
-            font-size: 38px;
-            color: #f04aa6;
-            letter-spacing: 0;
-            text-align: center;
-            margin: 60px 0 20px;
+          &:nth-child(2) {
+            width: 24%;
+            text-align: right;
           }
-          .name {
-            font-size: 18px;
-            color: #ffffff;
-            letter-spacing: 0;
-            text-align: center;
+          &:nth-child(3) {
+            width: 24%;
+            text-align: right;
           }
         }
-      }
-      .yw-table-wrap {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        margin: 80px 50px 50px 50px;
-        padding: 10px;
-        .yw-table {
-          .yw-table-item {
-            height: 33px;
-            line-height: 33px;
-            font-size: 14px;
-            color: #ffffff;
-            letter-spacing: 0;
-            padding: 0 30px;
-            &:nth-of-type(even) {
-              background: rgba(255, 255, 255, 0.05);
-            }
-            .yw-table-inner {
-              display: inline-block;
-              &:nth-child(1) {
-                width: 50%;
-              }
-              &:nth-child(2) {
-                width: 24%;
-                text-align: right;
-              }
-              &:nth-child(3) {
-                width: 24%;
-                text-align: right;
-              }
-            }
-            &.yw-table-header {
-              height: 30px;
-              line-height: 30px;
-              font-size: 14px;
-              color: #bbcee4;
-              letter-spacing: 0;
-              background: rgba(255, 255, 255, 0.05);
-            }
-          }
+        &.yw-table-header {
+          height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+          color: #bbcee4;
+          letter-spacing: 0;
+          background: rgba(255, 255, 255, 0.05);
         }
       }
     }
-    .right {
-      width: 48%;
-      height: 764px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-content: space-between;
-      .right-item {
-        width: 48.5%;
-        height: 31%;
-        background: #2d72fd;
-        .title {
-          font-size: 18px;
-          color: #ffffff;
-          letter-spacing: 0;
-          padding: 20px 0 0 20px;
-        }
-        .num {
-          font-size: 38px;
-          color: #ffffff;
-          letter-spacing: 0;
-          text-align: center;
-          margin: 45px 0 30px 0;
-        }
-        .cell {
-          font-size: 14px;
-          color: #ffffff;
-          letter-spacing: 0;
-          line-height: 30px;
-          text-align: center;
-        }
-      }
+  }
+}
+.right {
+  .right-item {
+    position: relative;
+    width: 48.5%;
+    height: 31%;
+    background: #2d72fd;
+    .title {
+      font-size: 18px;
+      color: #ffffff;
+      letter-spacing: 0;
+      padding: 20px 0 0 20px;
+    }
+    .num {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      margin-top: -20px;
+      font-size: 38px;
+      color: #ffffff;
+      letter-spacing: 0;
+      text-align: center;
+    }
+    .cell {
+      position: absolute;
+      width: 100%;
+      bottom: 20px;
+      font-size: 14px;
+      color: #ffffff;
+      letter-spacing: 0;
+      text-align: center;
     }
   }
 }

@@ -7,20 +7,22 @@
       <span class="date">截至2019年12月底</span>
     </section>
     <section class="flag-wrap">信息技术中心-管理信息系统部</section>
-    <section class="main-wrap">
+    <section class="main-wrap main-chart">
       <div class="main">
         <div class="left">
           <div class="title-wrap">
-            <p class="title">2019年度总消费</p>
-            <p class="num">93,8050 <span class="cell">元</span></p>
-            <div :id="leftDatas.id"
-                 style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
+            <div class="title-box">
+              <p class="title">2019年度总消费</p>
+              <p class="num">93,8050 <span class="cell">元</span></p>
+            </div>
           </div>
+          <div :id="leftDatas.id"
+               style="width: 90%;height: 80%;margin:0 auto;">暂无</div>
         </div>
         <div class="right">
           <p class="chart-title">各月份消费账单趋势</p>
           <div :id="rightDatas.id"
-               style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
+               style="width: 90%;height: 80%;margin:0 auto;">暂无</div>
         </div>
       </div>
     </section>
@@ -153,6 +155,7 @@ export default {
       option.series[0].startAngle = 0;
       option.legend.data = ['裸金属', '云主机', '存储'];
 
+
       option.legend.formatter = (params) => {
         let value = chartDatas.find(value => value.name == params).value;
         let text = `${params}${'  '}${value}元`;
@@ -218,6 +221,7 @@ export default {
       option.series[0] = JSON.parse(JSON.stringify(option.series[0]));
       option.legend.data = [''];
       option.series[0].lineStyle.color.colorStops = colors.blue;
+      option.grid.left = 80;
 
       option.tooltip.formatter = (params) => {
         let flag = `<span style="display:inline-block;vertical-align:middle;margin-right:3px;width:4px;height:4px;border-radius:100%;background:#fff;"></span>`;
@@ -245,46 +249,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-wrap {
-  padding: 50px 70px 20px 50px;
-  .main {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    .left {
-      width: 44%;
-      height: 742px;
-      background: rgba(24, 19, 109, 0.95);
-      .title-wrap {
-        width: 737px;
-        height: 116px;
-        background: url(../assets/img/pic_pay.png) no-repeat;
-        margin: 20px 0 0 25px;
-        .title {
-          font-size: 18px;
-          color: #ffffff;
-          letter-spacing: 0;
-          padding: 20px 0 0 20px;
-        }
-        .num {
-          font-size: 38px;
-          color: #ffffff;
-          letter-spacing: 0;
-          text-align: center;
-          margin-top: -10px;
-        }
-        .cell {
-          font-size: 18px;
-          color: #fff;
-          letter-spacing: 0;
-        }
+.left {
+  .title-wrap {
+    padding: 20px 20px 0 20px;
+    .title-box {
+      width: 100%;
+      height: 136px;
+      background: url(../assets/img/pic_pay.png) no-repeat;
+      background-size: contain;
+      .title {
+        font-size: 18px;
+        color: #ffffff;
+        letter-spacing: 0;
+        padding: 20px 0 0 20px;
+      }
+      .num {
+        font-size: 38px;
+        color: #ffffff;
+        letter-spacing: 0;
+        text-align: center;
+      }
+      .cell {
+        font-size: 18px;
+        color: #fff;
+        letter-spacing: 0;
       }
     }
-    .right {
-      width: 54.5%;
-      height: 742px;
-      background: rgba(24, 19, 109, 0.95);
-    }
   }
+}
+.right {
+  background: rgba(24, 19, 109, 0.95);
 }
 </style>

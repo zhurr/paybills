@@ -38,10 +38,11 @@ export default {
 
 <style lang="scss" scoped>
 .main-wrap {
+  position: absolute;
+  top: 30%;
+  left: 33%;
   width: 673px;
   height: 300px;
-  margin: 288px auto 0 auto;
-  padding-left: 10px;
   .title {
     font-size: 20px;
     color: #42cff3;

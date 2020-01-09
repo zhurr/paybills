@@ -20,7 +20,7 @@
         <p class="tip"
            v-if="item.chartDatas.rate < 20">利用率太低啦～</p>
         <div :id="item.id"
-             style="width:100%;height:100%;">暂无</div>
+             style="width: 100%;height: 100%;margin:0 auto;">暂无</div>
       </section>
     </div>
 
@@ -164,27 +164,23 @@ export default {
 
 <style lang="scss" scoped>
 .container-component {
+  position: relative;
   width: 100%;
   height: 50%;
-  &:after {
-    content: "";
-    display: inline-block;
-    width: calc(100% - 60px);
-    height: 0;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
-    margin: 0px 0 20px 30px;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
+
+  .chart-wrap {
+    width: 100%;
+    height: calc(100% - 80px);
   }
   .chart-item {
     position: relative;
     display: inline-block;
     width: 45%;
-    height: 200px;
+    height: 100%;
     .tip {
       position: absolute;
-      top: 25px;
-      right: 40px;
+      top: 2%;
+      left: 60%;
       z-index: 9999;
       width: 106px;
       height: 32px;

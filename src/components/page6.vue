@@ -12,7 +12,9 @@
       <p>消费最多的资源类型是裸金属</p>
       <p>消费最高的月份是十二月份</p>
       <p>平均资源利用率战胜了<span style="font-size:24px;color:#F54BA6;">78<span style="font-size:16px;">%</span></span>的租户</p>
-      <p style="margin-top:20px;">2019年，您的关键词：<span class="keyword">佛系赢家</span><span class="keyword">披荆斩棘</span><span class="keyword">豪门金主</span></p>
+      <p style="margin-top:20px;">2019年，您的关键词：<span class="keyword">佛系赢家</span>
+        <!-- <span class="keyword">披荆斩棘</span><span class="keyword">豪门金主</span> -->
+      </p>
     </section>
     <section class="picture-wrap"></section>
     <section class="footer-wrap">Copyright©-2019 中国移动IT云 版权所有</section>
@@ -42,9 +44,11 @@ export default {
 
 <style lang="scss" scoped>
 .main-wrap {
+  position: absolute;
+  left: 25%;
+  top: 25%;
   width: 673px;
   height: 400px;
-  margin: 235px auto 0 26%;
   padding-left: 10px;
   font-size: 16px;
   color: #ffffff;
@@ -63,8 +67,8 @@ export default {
 }
 .picture-wrap {
   position: absolute;
-  top: 24%;
-  right: 18%;
+  top: 15%;
+  right: 10%;
   display: inline-block;
   width: 605px;
   height: 412px;

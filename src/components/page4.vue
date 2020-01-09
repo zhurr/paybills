@@ -7,20 +7,22 @@
       <span class="date">截至2019年12月底</span>
     </section>
     <section class="flag-wrap">信息技术中心-管理信息系统部</section>
-    <section class="main-wrap">
+    <section class="main-wrap main-chart">
       <div class="main">
         <div class="left">
           <div class="title-wrap">
-            <p class="title">2019年工单总数</p>
-            <p class="num">{{leftDatas.total}} <span class="cell">条</span></p>
-            <div :id="leftDatas.id"
-                 style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
+            <div class="title-box">
+              <p class="title">2019年工单总数</p>
+              <p class="num">{{leftDatas.total}} <span class="cell">条</span></p>
+            </div>
           </div>
+          <div :id="leftDatas.id"
+               style="width: 90%;height: 80%;margin:0 auto;">暂无</div>
         </div>
         <div class="right">
           <p class="chart-title">各月份工单数量统计</p>
           <div :id="rightDatas.id"
-               style="width: 90%;height: 500px;margin: 80px 0 50px 50px;">暂无</div>
+               style="width: 90%;height: 80%;margin:0 auto;">暂无</div>
         </div>
       </div>
     </section>
@@ -234,46 +236,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-wrap {
-  padding: 50px 70px 20px 50px;
-  .main {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    .left {
-      width: 44%;
-      height: 742px;
-      background: rgba(24, 19, 109, 0.95);
-      .title-wrap {
-        width: 737px;
-        height: 116px;
-        background: url(../assets/img/bg.png) no-repeat;
-        margin: 20px 0 0 25px;
-        .title {
-          font-size: 18px;
-          color: #ffffff;
-          letter-spacing: 0;
-          padding: 20px 0 0 20px;
-        }
-        .num {
-          font-size: 38px;
-          color: #ffffff;
-          letter-spacing: 0;
-          text-align: center;
-          margin-top: -10px;
-        }
-        .cell {
-          font-size: 18px;
-          color: #fff;
-          letter-spacing: 0;
-        }
+.left {
+  .title-wrap {
+    padding: 20px 20px 0 20px;
+    .title-box {
+      width: 100%;
+      height: 136px;
+      background: url(../assets/img/bg.png) no-repeat;
+      background-size: contain;
+      .title {
+        font-size: 18px;
+        color: #ffffff;
+        letter-spacing: 0;
+        padding: 20px 0 0 20px;
+      }
+      .num {
+        font-size: 38px;
+        color: #ffffff;
+        letter-spacing: 0;
+        text-align: center;
+      }
+      .cell {
+        font-size: 18px;
+        color: #fff;
+        letter-spacing: 0;
       }
     }
-    .right {
-      width: 54.5%;
-      height: 742px;
-      background: rgba(24, 19, 109, 0.95);
-    }
   }
+}
+.right {
+  background: rgba(24, 19, 109, 0.95);
 }
 </style>
