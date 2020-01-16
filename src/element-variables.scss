@@ -73,3 +73,57 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
   }
 }
+
+//表格
+.yw-table-wrap {
+  height: calc(100% - 300px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  width: calc(100% - 40px);
+  margin: 30px auto 0;
+
+  .yw-table {
+    height: 100%;
+
+    .yw-table-item {
+      height: 33px;
+      line-height: 33px;
+      font-size: 14px;
+      color: #ffffff;
+      letter-spacing: 0;
+      padding: 0 30px;
+
+      &:nth-of-type(even) {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .yw-table-inner {
+        display: inline-block;
+
+        &:nth-child(1) {
+          width: 50%;
+        }
+
+        &:nth-child(2) {
+          width: 24%;
+          text-align: right;
+        }
+
+        &:nth-child(3) {
+          width: 24%;
+          text-align: right;
+        }
+      }
+
+      &.yw-table-header {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        color: #bbcee4;
+        letter-spacing: 0;
+        background: rgba(255, 255, 255, 0.05);
+      }
+    }
+  }
+}

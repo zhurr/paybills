@@ -208,7 +208,7 @@ export default {
   position: relative;
   .split {
     position: absolute;
-    top: 48%;
+    top: 50%;
     left: 30px;
     display: inline-block;
     width: calc(100% - 60px);

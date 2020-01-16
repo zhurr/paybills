@@ -16,7 +16,7 @@
             ref="mySwiper"
             style="width:100%;height:100%;">
       <swiper-slide v-for="item in 6"
-                    :class="{'swiper-no-swiping':item==2}"
+                    :class="{'swiper-no-swiping':[2,5].indexOf(item)>-1}"
                     :key="item">
         <component :is="activePage+item"></component>
       </swiper-slide>

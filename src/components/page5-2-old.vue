@@ -2,7 +2,7 @@
 <template>
   <div class="container-component">
     <div class="chart-title clearfix">
-      <span>各月份资源利用率趋势</span>
+      <span>2019年度资源峰值利用率</span>
       <el-tabs class="yw-tabs"
                v-model="activeFilter"
                type="card"
@@ -17,8 +17,6 @@
       <section class="chart-item"
                v-for="(item,index) in rightDatas"
                :key="index">
-        <p class="tip"
-           v-if="item.chartDatas.rate < 20">利用率太低啦～</p>
         <div :id="item.id"
              style="width: 100%;height: 100%;margin:0 auto;">暂无</div>
       </section>
@@ -45,8 +43,8 @@ export default {
     return {
       filter: [{ name: '物理机', label: '物理机' }, { name: '虚拟机', label: '虚拟机' }],
       activeFilter: '物理机',
-      rightDatas: [{ id: 'page5-1-1', chartOption: 'gauge-option', chartDatas: [] },
-      { id: 'page5-1-2', chartOption: 'gauge-option', chartDatas: [] }],
+      rightDatas: [{ id: 'page5-2-1', chartOption: 'gauge-option', chartDatas: [] },
+      { id: 'page5-2-2', chartOption: 'gauge-option', chartDatas: [] }],
     }
   },
 
@@ -55,21 +53,21 @@ export default {
 
       if (this.activeFilter == '物理机') {
         this.rightDatas[0].chartDatas = {
-          name: 'CPU平均资源利用率',
-          rate: 3.39 //0%
+          name: 'CPU峰值资源利用率',
+          rate: 20.69  //0%
         };
         this.rightDatas[1].chartDatas = {
-          name: '内存平均资源利用率',
-          rate: 19.33  //0%
+          name: '内存峰值资源利用率',
+          rate: 38.00  //0%
         };
       } else {
         this.rightDatas[0].chartDatas = {
-          name: 'CPU平均资源利用率',
-          rate: 1.75 //0%
+          name: 'CPU峰值资源利用率',
+          rate: 17.12 //0%
         };
         this.rightDatas[1].chartDatas = {
-          name: '内存平均资源利用率',
-          rate: 17.47  //0%
+          name: '内存峰值资源利用率',
+          rate: 25.89 //0%
         };
       }
       this.drawCharts(this.rightDatas[0]);
@@ -143,7 +141,7 @@ export default {
       option.series[0] = JSON.parse(JSON.stringify(option.series[0]));
       option.series[0].name = chartDatas.name;
 
-      option.series[0].axisLine.lineStyle.color = colors.gaugeRed;
+      option.series[0].axisLine.lineStyle.color = colors.gaugePurple;
       option.series[0].axisLine.lineStyle.color[0][0] = chartDatas.rate / 100;
       option.series[0].data[0].name = '';
       option.series[0].data[0].value = chartDatas.rate;
@@ -171,7 +169,6 @@ export default {
   position: relative;
   width: 100%;
   height: 50%;
-
   .chart-wrap {
     width: 100%;
     height: calc(100% - 80px);
@@ -181,17 +178,6 @@ export default {
     display: inline-block;
     width: 45%;
     height: 100%;
-    .tip {
-      position: absolute;
-      top: 2%;
-      left: 60%;
-      z-index: 9999;
-      width: 106px;
-      height: 32px;
-      background: url(../assets/img/矩形.png) no-repeat;
-      text-align: center;
-      line-height: 32px;
-    }
   }
   .tip-wrap {
     position: absolute;
