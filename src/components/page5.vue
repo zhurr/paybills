@@ -3,8 +3,8 @@
   <div class="container clearfix">
     <section class="log-wrap">
       <i class="logo"></i>
-      <span class="title">租户IT云资源使用情况</span>
-      <span class="date">截至2019年12月底</span>
+      <span class="title small">2020年01月IT云资源利用率</span>
+      <!-- <span class="date">截至2019年12月底</span> -->
     </section>
     <section class="flag-wrap">信息技术中心-管理信息系统部</section>
     <section class="main-wrap main-chart">
@@ -16,7 +16,7 @@
         </div>
         <div class="right">
           <div class="chart-title clearfix">
-            <span>各月份资源利用率趋势</span>
+            <span>2020年01月资源利用率趋势</span>
             <el-tabs class="yw-tabs"
                      v-model="activeFilter"
                      type="card"

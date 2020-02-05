@@ -3,7 +3,7 @@
   <div class="container clearfix">
     <section class="log-wrap">
       <i class="logo"></i>
-      <span class="title">租户IT云资源使用情况</span>
+      <span class="title">租户IT云资源利用情况</span>
     </section>
     <section class="flag-wrap">信息技术中心-管理信息系统部</section>
     <section class="main-wrap">

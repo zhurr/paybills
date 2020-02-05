@@ -3,7 +3,7 @@
   <div class="container-component">
     <section style="width:100%;height:100%;">
       <div class="chart-title clearfix">
-        <span>2019年度资源峰值利用率</span>
+        <span>2020年01月资源峰值利用率</span>
         <el-tabs class="yw-tabs"
                  v-model="activeFilter"
                  type="card"

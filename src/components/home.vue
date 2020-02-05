@@ -15,8 +15,8 @@
     <swiper :options="swiperOption"
             ref="mySwiper"
             style="width:100%;height:100%;">
-      <swiper-slide v-for="item in 6"
-                    :class="{'swiper-no-swiping':[2,5].indexOf(item)>-1}"
+      <swiper-slide v-for="item in 3"
+                    class="swiper-no-swiping"
                     :key="item">
         <component :is="activePage+item"></component>
       </swiper-slide>
@@ -43,10 +43,10 @@ export default {
     swiperSlide,
     page1: () => import('./page1.vue'),
     page2: () => import('./page2.vue'),
-    page3: () => import('./page3.vue'),
-    page4: () => import('./page4.vue'),
-    page5: () => import('./page5.vue'),
-    page6: () => import('./page6.vue'),
+    page3: () => import('./page5.vue'),
+    // page4: () => import('./page4.vue'),
+    // page5: () => import('./page5.vue'),
+    // page6: () => import('./page6.vue'),
 
   },
   data () {
@@ -116,6 +116,8 @@ export default {
     }
 
     .title {
+      display: inline-block;
+      vertical-align: middle;
       margin-left: 15px;
       font-size: 20px;
       color: #42cff3;
@@ -124,6 +126,9 @@ export default {
 
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      &.small {
+        font-size: 16px;
+      }
     }
     .date {
       font-size: 14px;

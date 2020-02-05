@@ -3,8 +3,8 @@
   <div class="container clearfix">
     <section class="log-wrap">
       <i class="logo"></i>
-      <span class="title">租户IT云资源使用情况</span>
-      <span class="date">截至2019年12月底</span>
+      <span class="title small">IT云资源使用量（截至2020年01月底）</span>
+      <!-- <span class="date">截至2019年12月底</span> -->
     </section>
     <section class="flag-wrap">信息技术中心-管理信息系统部</section>
     <section class="main-wrap main-chart">
@@ -105,7 +105,7 @@ export default {
           cell: '已分配总量(T)'
         }
       ],
-      tableTitles: ['业务系统名称', '物理机分配总量(台)', '虚拟机分配总量(台)'],
+      tableTitles: ['租户应用系统名称', '物理机分配总量(台)', '虚拟机分配总量(台)'],
       tableDatas: [
         {
           name: '集中化公文系统',

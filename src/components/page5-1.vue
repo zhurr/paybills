@@ -2,7 +2,7 @@
 <template>
   <div class="container-component">
     <div class="chart-title clearfix">
-      <span>各月份资源利用率趋势</span>
+      <span>2020年01月资源平均利用率</span>
       <el-tabs class="yw-tabs"
                v-model="activeFilter"
                type="card"
@@ -25,7 +25,7 @@
     </div>
     <div class="tip-wrap">
       <i class="tip-img"></i>
-      <span class="tip">2019年度资源平均利用率太低！2020年继续加油啊～</span>
+      <span class="tip">1月份资源平均利用率太低！2月份继续加油啊～</span>
     </div>
 
   </div>
