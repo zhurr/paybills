@@ -1,5 +1,8 @@
 # paybills
-vue-cli3 + elementui + echarts
+vue-cli4
+
+# 插件
+elementui(ui) + echarts(图表) + flexible(分辨率自适应) + 'postcss-px-to-viewport' + 'vue-awesome-swiper'(全屏滑动)
 
 ## Project setup
 ```

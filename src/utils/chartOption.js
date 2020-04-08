@@ -51,20 +51,20 @@
         ],
         pieYellow: [{
             offset: 0,
-            color: '#FFC940' // 0% 处的颜色
+            color: '#FFCC3F' // 0% 处的颜色
           },
           {
             offset: 1,
-            color: '#FFC940' // 100% 处的颜色
+            color: '#FFCC3F' // 100% 处的颜色
           }
         ],
         pieBlueDark: [{
             offset: 0,
-            color: '#2A28FF' // 0% 处的颜色
+            color: '#391FCE' // 0% 处的颜色
           },
           {
             offset: 1,
-            color: '#2A28FF' // 100% 处的颜色
+            color: '#391FCE' // 100% 处的颜色
           }
         ],
         barBlue: [{
@@ -267,7 +267,7 @@
       series: [{
         name: '名称',
         type: 'gauge',
-        radius: '100%',
+        radius: '80%',
         axisLine: { // 坐标轴线
           lineStyle: {
             width: 16,
@@ -317,6 +317,7 @@
           }
         },
         detail: {
+          show: false,
           color: '#fff',
           fontSize: 12,
           formatter: '{value}%',
@@ -325,17 +326,37 @@
           rich: {
             detailName: {
               fontSize: 14,
-              color: '#C8C6DC'
+              color: '#fff',
+              lineHeight: 40
+            },
+            changeName: {
+              fontSize: 12,
+              color: '#574FB6',
+              padding: [0, 2, 0, 0]
+            },
+            changeNum: {
+              fontSize: 12,
+              color: '#fff',
+              backgroundColor: '#0DBE9C',
+              borderRadius: 20,
+              padding: [4, 5]
+            },
+            changeNumDown: {
+              fontSize: 12,
+              color: '#fff',
+              backgroundColor: '#FF5136',
+              borderRadius: 20,
+              padding: [4, 5]
             },
             rate: {
-              fontSize: 28,
+              fontSize: 24,
               color: '#fff',
-              lineHeight: 75
+              lineHeight: 60
             },
             rateCell: {
-              fontSize: 20,
+              fontSize: 16,
               color: '#fff',
-              lineHeight: 75
+              lineHeight: 60
             }
           }
         },
@@ -361,12 +382,12 @@
         text: '标题',
         subtext: '子标题',
         textStyle: {
-          fontSize: 20,
-          color: '#2D72FD'
+          fontSize: 16,
+          color: '#fff'
         },
         subtextStyle: {
-          fontSize: 20,
-          color: '#2D72FD'
+          fontSize: 12,
+          color: '#fff'
         },
         textAlign: 'center',
         x: '50%',
@@ -423,10 +444,11 @@
       series: [{
         name: '名称',
         type: 'pie',
-        radius: ['30%', '50%'], // 圆环半径
-        center: ['60%', '50%'], // 圆心位置
+        radius: ['55%', '80%'], // 圆环半径
+        center: ['50%', '50%'], // 圆心位置
         startAngle: 90,
         label: {
+          show: true,
           formatter: '{b}\n{d}%',
           rich: {
 
@@ -520,11 +542,11 @@
         // data: ['名称']
       },
       grid: {
-        // left: 80,
-        // right: 30,
-        // top: 40,
-        // bottom: 10,
-        // containLabel: true
+        left: 60,
+        right: 40,
+        top: 60,
+        bottom: 50,
+        containLabel: true
       },
       xAxis: {
         type: 'category',
@@ -547,7 +569,7 @@
         type: 'value',
         name: '',
         // min: 'dataMin',
-        // max: 'dataMax',
+        max: 'dataMax',
         nameTextStyle: {},
         axisLine: {
           // show: false

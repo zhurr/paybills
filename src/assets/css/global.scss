@@ -25,6 +25,7 @@ body,
 body {
   font-size: 12px;
   background: #371094;
+  zoom: '50%'
 }
 
 .clearfix:before,
@@ -36,6 +37,36 @@ body {
 .clearfix:after {
   clear: both;
 }
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.text-ellipse {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*修改滚动条样式*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3C397B;
+  border-radius: 5px;
+}
+
 
 /**项目常用样式**/
 //图表布局
@@ -52,18 +83,15 @@ body {
       justify-content: space-between;
 
       .left {
+        position: relative;
         width: 50.5%;
         height: 100%;
-        background: rgba(24, 19, 109, 0.95);
       }
 
       .right {
+        position: relative;
         width: 48%;
         height: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        align-content: space-between;
       }
     }
   }
