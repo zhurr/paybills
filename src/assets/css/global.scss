@@ -1,98 +1,282 @@
 /**样式重置**/
 #app {
-  font-family: "PingFangSC-Semibold", Helvetica, Arial, sans-serif, 'Microsoft YaHei';
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #fff;
+    font-family: "PingFangSC-Semibold", Helvetica, Arial, sans-serif, 'Microsoft YaHei';
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
 }
 
 html,
 body,
 #app {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
 }
 
 body {
-  font-size: 12px;
-  background: #371094;
-  zoom: '50%'
+    font-size: 12px;
+    background: #371094;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    color: #01E5FF;
 }
 
 .clearfix:before,
 .clearfix:after {
-  display: table;
-  content: "";
+    display: table;
+    content: "";
 }
 
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
 
 .fl {
-  float: left;
+    float: left;
 }
 
 .fr {
-  float: right;
+    float: right;
 }
 
 .text-ellipse {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /*修改滚动条样式*/
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  background-color: transparent;
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3C397B;
-  border-radius: 5px;
+    background-color: #3C397B;
+    border-radius: 5px;
 }
 
 
 /**项目常用样式**/
-//图表布局
-.main-wrap {
-  &.main-chart {
-    padding: 35px 70px 20px 50px;
-    height: 82%;
+//字体颜色
+.color-blue {
+    color: #1F9EFD;
+}
 
-    .main {
-      position: relative;
-      height: 100%;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
+.color-blue-light {
+    color: #59e2ff;
+}
 
-      .left {
-        position: relative;
-        width: 50.5%;
-        height: 100%;
-      }
+//字体渐变
+.fontGradient-blue-red {
+    background: -webkit-linear-gradient(left, #59e2ff 0%, #d51bcc 100%);
 
-      .right {
-        position: relative;
-        width: 48%;
-        height: 100%;
-      }
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fontGradient-red-blue {
+    background: -webkit-linear-gradient(left, #d51bcc 0%, #1F9EFD 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fontGradient-blue-light {
+    background: -webkit-linear-gradient(left, #1F9EFD 0%, #59e2ff 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+//整体布局及背景
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("~@/assets/img/img_bg.png") no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .log-wrap {
+        display: inline-block;
+        margin: 15px 0 0 20px;
+
+        .logo {
+            display: inline-block;
+            vertical-align: middle;
+            width: 197px;
+            height: 32px;
+            background: url("~@/assets/img/logo.png") no-repeat;
+        }
+
+        .title {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 15px;
+            font-size: 18px;
+            color: #fff;
+            color: #42cff3;
+            letter-spacing: 0;
+            font-weight: 600;
+            background: -webkit-linear-gradient(left, #2ea3fd 0%, #2bfdce 100%);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            &.small {
+                font-size: 16px;
+            }
+        }
+
+        .date {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0;
+            margin-left: 15px;
+        }
     }
-  }
+
+    .flag-wrap {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 14px;
+        color: #ffffff;
+        letter-spacing: 0;
+    }
+
+    .footer-wrap {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 20px;
+        opacity: 0.5;
+        font-family: PingFangSC-Medium;
+        font-style: normal;
+        font-size: 12px;
+        color: #ffffff;
+        letter-spacing: 0;
+    }
+
+    .chart-title {
+        width: 100%;
+        font-size: 16px;
+        color: #ffffff;
+        letter-spacing: 0;
+        padding: 20px 30px 0 30px;
+    }
+
+    //图表布局
+    .main-wrap {
+        &.main-chart {
+            padding: 35px 70px 20px 50px;
+            height: 80%;
+
+            .main {
+                position: relative;
+                height: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+
+                .left {
+                    position: relative;
+                    width: 50.5%;
+                    height: 100%;
+                }
+
+                .right {
+                    position: relative;
+                    width: 48%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+//swiper
+.home {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .swiper-tip {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 120px;
+        margin-left: -60px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 999;
+
+        .tip-img {
+            display: inline-block;
+            background: url("~@/assets/img/jiantou.png") no-repeat;
+            transform: rotate(180deg);
+        }
+
+        .tip-text {
+            font-size: 14px;
+            color: #7a64c1;
+            margin-bottom: 5px;
+            animation: fadeInDown 2s infinite;
+        }
+    }
+
+    .swiper-container-vertical {
+        .swiper-pagination {
+            &.swiper-pagination-bullets {
+                right: 30px;
+                margin-top: -60px;
+
+                .swiper-pagination-bullet {
+                    width: 12px;
+                    height: 12px;
+                    background: #7663b7;
+                    opacity: 1;
+
+                    &.swiper-pagination-bullet-active {
+                        background: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -50%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }

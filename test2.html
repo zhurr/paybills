@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不规则渐变条</title>
+    <style>
+        .chamfer {
+            width: 300px;
+            height: 100px;
+            background: #3b3;
+            background:
+                linear-gradient(-135deg, transparent 30px, #3b3 0) top left;
+            /* linear-gradient(270deg, #FB7757 0%, #FFC333 100%); */
+
+
+            /* background: linear-gradient(135deg, transparent 15px, #3b3 0) top left,
+        linear-gradient(-135deg, transparent 50px, #3b3 0) top right,
+        linear-gradient(-45deg, transparent 50px, #3b3 0) bottom right,
+        linear-gradient(45deg, transparent 15px, #3b3 0) bottom left; */
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chamfer"></div>
+</body>
+
+</html>

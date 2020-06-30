@@ -1,20 +1,20 @@
 <template>
-  <div id="app">
-    <home />
-  </div>
+    <div id="app">
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
-import home from './views/home.vue'
+    // import home from '@/views/month/home.vue'
 
-export default {
-  name: 'app',
-  components: {
-    home
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            // home
+        }
+    }
 </script>
 
 <style lang="scss">
-@import "assets/css/global.scss";
+    @import "assets/css/global.scss";
 </style>
